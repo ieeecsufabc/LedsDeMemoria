@@ -10,7 +10,7 @@ int tempoLeituraBot = 500, tempoJogada = 1000;
 bool konami = 0; // "konami code"
 
 byte contadorVetor;
-byte nivelDoJogo = 0; // nivel inicial do jogo
+byte nivelDoJogo = 9; // nivel inicial do jogo
 byte certo = 0;
 
 bool start = 0; // programa rodando ou não
@@ -136,20 +136,20 @@ void loop() {
         ganhou ();
       }
       tempoJogada = tempoJogada - 100;
-    } else {
+    } else {                                        //  caso o jogador erre, tal função inicia
       nivelDoJogo = 0;
       tempoJogada = 1000;
       digitalWrite(ledVermelho, HIGH);
       delay(2000);
       digitalWrite(ledVermelho, LOW);
-      start = 0;
+      start = 0;                      // reinicia o jogo
       for (byte i = 29; i < 38; i++) {
         digitalWrite(i, HIGH);
       }
     }
-    certo = 0;
+    certo = 0;                // zera a variável 
   }
-  if (digitalRead(btn1)) {
+  if (digitalRead(btn1)) {                // inicia o jogo após o botão ser pressionado
     start = 1;
     for (byte i = 29; i < 38; i++) {
       digitalWrite(i, LOW);
@@ -157,7 +157,7 @@ void loop() {
   }
 }
 
-void mostraNivel(byte nivel) {
+void mostraNivel(byte nivel) {                  // indica o nível atual com os LEDs
   switch (nivel) {
     case 0:
       delay(tempoMostraNivel);
@@ -292,7 +292,7 @@ void mostraNivel(byte nivel) {
   }
 }
 
-void ganhou() {
+void ganhou() {                         // função quando o jogador ganha o jogo por completo
   for (byte i = 29; i < 38; i++) {
     digitalWrite(i, HIGH);
   }
@@ -309,6 +309,11 @@ void ganhou() {
     digitalWrite(i, LOW);
   }
   delay(1000);
+  start = 0;
+  nivelDoJogo = 0;
+  for (byte i = 29; i < 38; i++) {
+    digitalWrite(i, HIGH);
+  }
 }
 
 
