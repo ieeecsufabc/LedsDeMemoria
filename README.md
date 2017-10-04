@@ -3,6 +3,7 @@ Projeto inspirado no jogo Genius
 
 Introdução
 	Em razão de divulgar a CS (Computer Society) para a comunidade, foi desenvolvido um jogo de memória com Leds para ser exposto no evento anual "UFABC Para Todos" . O jogo, de modo interativo, testa a capacidade de memória fotográfica do participante.
+	
 Voluntários
 -André Silva Carvalheiro;
 -Bruna Ishida;
@@ -11,6 +12,7 @@ Voluntários
 -Luís Kenzo Takayama;
 -Nathan do Valle Fraga;
 -Rafael Henrique Siqueira Silva.
+
 Materiais
 -9 LEDS Amarelo;
 -1 LED Vermelho;
@@ -21,6 +23,7 @@ Materiais
 -Arduíno Mega;
 -Placa ilha  de fibra de vidro 10x10cm;
 -22 “jumpers”.
+
 Cronograma
 Dia1: Brainstorm e prototipagem do projeto;
 Dia2:  Desenvolvimento da programação e montagem da placa Ilha.
